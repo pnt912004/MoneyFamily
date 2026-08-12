@@ -1,0 +1,496 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Goals &amp; Limits - MoneyFamily</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              surface: "#f8f9fa",
+              "on-background": "#191c1d",
+              "on-primary-container": "#003b0b",
+              "tertiary-fixed": "#abf4ac",
+              error: "#ba1a1a",
+              "surface-container-highest": "#e1e3e4",
+              "primary-container": "#4bae4f",
+              "surface-container": "#edeeef",
+              "primary-fixed-dim": "#78dc77",
+              primary: "#006e1c",
+              "on-secondary-container": "#725b00",
+              "tertiary-container": "#65a969",
+              "surface-container-high": "#e7e8e9",
+              "secondary-fixed-dim": "#ebc23e",
+              "on-tertiary-container": "#003b11",
+              "on-secondary-fixed-variant": "#574500",
+              "inverse-on-surface": "#f0f1f2",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#78dc77",
+              "surface-tint": "#006e1c",
+              tertiary: "#286b33",
+              background: "#f8f9fa",
+              "on-primary-fixed-variant": "#005313",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#241a00",
+              "surface-dim": "#d9dadb",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f3f4f5",
+              "secondary-fixed": "#ffe087",
+              "on-surface-variant": "#3f4a3c",
+              "tertiary-fixed-dim": "#90d792",
+              "inverse-surface": "#2e3132",
+              "error-container": "#ffdad6",
+              outline: "#6f7a6b",
+              "surface-variant": "#e1e3e4",
+              "on-primary-fixed": "#002204",
+              "surface-bright": "#f8f9fa",
+              "primary-fixed": "#94f990",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#07521d",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fdd34d",
+              "on-surface": "#191c1d",
+              "outline-variant": "#becab9",
+              "on-tertiary-fixed": "#002107",
+              secondary: "#735c00",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              lg: "24px",
+              xs: "8px",
+              gutter: "16px",
+              "margin-desktop": "40px",
+              base: "4px",
+              md: "16px",
+              xl: "32px",
+              "margin-mobile": "20px",
+              sm: "12px",
+            },
+            fontFamily: {
+              "body-lg": ["Be Vietnam Pro"],
+              "body-sm": ["Be Vietnam Pro"],
+              "title-md": ["Be Vietnam Pro"],
+              "headline-lg-mobile": ["Be Vietnam Pro"],
+              "headline-lg": ["Be Vietnam Pro"],
+              "display-lg": ["Be Vietnam Pro"],
+              "label-md": ["Be Vietnam Pro"],
+            },
+            fontSize: {
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-lg": [
+                "40px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .material-symbols-outlined.filled {
+        font-variation-settings: "FILL" 1;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-background min-h-screen pb-[100px] md:pb-0">
+    <!-- TopAppBar -->
+    <header
+      class="bg-surface dark:bg-on-background docked full-width top-0 bg-surface dark:bg-on-background flex justify-between items-center px-margin-mobile py-sm w-full sticky top-0 z-50"
+    >
+      <div class="flex items-center gap-sm">
+        <div class="w-10 h-10 rounded-full overflow-hidden shrink-0">
+          <img
+            alt="User profile photo"
+            class="w-full h-full object-cover"
+            data-alt="A close-up portrait of a friendly, smiling adult in soft, natural lighting, conveying a sense of approachability and warmth, suitable for a modern app user profile picture."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwYQSwpC6vfIyU1PYvkS8OCeLFjgnH2qCn_prDs589BmSqoXiqUzUQDlX9-x62cFT-Wr9yNh7PkKato-ths6zM3bAuzbgQ9zQ6pb8C2M-Jc5esIOb7qbvjq7boDIzjWxUdIVEm9gIX7HrDRhG39ZdHFs1kihf-lZJH-E4duHkrMhGLZjv4387OS8AR0FSw6cluh8If0Q32bUubsZBTIsUBnly8CDbqmQSOBy4evu5wtr7CRGA23NwW"
+          />
+        </div>
+        <h1
+          class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim"
+        >
+          MoneyFamily
+        </h1>
+      </div>
+      <button
+        class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-colors text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity"
+      >
+        <span
+          class="material-symbols-outlined text-2xl"
+          data-icon="notifications"
+          >notifications</span
+        >
+      </button>
+    </header>
+    <main
+      class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg space-y-xl"
+    >
+      <!-- Page Title -->
+      <div class="space-y-base">
+        <h2
+          class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg"
+        >
+          Mục tiêu &amp; Hạn mức
+        </h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">
+          Quản lý chi tiêu và lên kế hoạch cho gia đình.
+        </p>
+      </div>
+      <!-- Notification Card -->
+      <div
+        class="bg-error-container/20 rounded-xl p-lg border border-error-container flex items-start gap-sm"
+      >
+        <span class="material-symbols-outlined text-error mt-0.5 filled"
+          >warning</span
+        >
+        <div>
+          <p class="font-body-lg text-body-lg font-medium text-error">
+            Thông báo hạn mức
+          </p>
+          <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Tuần trước hụt 200k, đã trừ vào hạn mức tuần này.
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+        <!-- Weekly Limit -->
+        <div
+          class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
+        >
+          <div class="flex justify-between items-center mb-md">
+            <h3 class="font-title-md text-title-md">Hạn mức tuần</h3>
+            <button
+              class="text-primary hover:bg-primary-container/20 p-2 rounded-full transition-colors"
+            >
+              <span class="material-symbols-outlined">edit</span>
+            </button>
+          </div>
+          <div class="mb-lg">
+            <div class="flex justify-between font-body-sm text-body-sm mb-2">
+              <span class="text-on-surface-variant">Đã chi: 1.500.000đ</span>
+              <span class="text-primary font-medium">Còn lại: 3.300.000đ</span>
+            </div>
+            <div class="h-2 bg-primary/10 rounded-full w-full overflow-hidden">
+              <div
+                class="h-full bg-primary rounded-full"
+                style="width: 31%"
+              ></div>
+            </div>
+            <p
+              class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-right"
+            >
+              Tổng: 4.800.000đ (Đã điều chỉnh)
+            </p>
+          </div>
+          <div class="space-y-sm">
+            <h4
+              class="font-label-md text-label-md text-on-surface-variant uppercase"
+            >
+              Danh mục chi tiêu chính
+            </h4>
+            <div class="flex gap-2 flex-wrap">
+              <span
+                class="bg-secondary-container/30 text-on-secondary-container px-3 py-1 rounded-full font-body-sm text-body-sm flex items-center gap-1"
+              >
+                <span class="material-symbols-outlined text-[16px]"
+                  >restaurant</span
+                >
+                Ăn uống
+              </span>
+              <span
+                class="bg-tertiary-container/30 text-on-tertiary-container px-3 py-1 rounded-full font-body-sm text-body-sm flex items-center gap-1"
+              >
+                <span class="material-symbols-outlined text-[16px]"
+                  >shopping_cart</span
+                >
+                Siêu thị
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- Smart Alerts Settings -->
+        <div
+          class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
+        >
+          <h3 class="font-title-md text-title-md mb-md">Cảnh báo thông minh</h3>
+          <div class="space-y-md">
+            <label
+              class="flex items-center justify-between cursor-pointer group"
+            >
+              <div>
+                <p
+                  class="font-body-lg text-body-lg font-medium group-hover:text-primary transition-colors"
+                >
+                  Cảnh báo vượt 80%
+                </p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Nhắc nhở khi sắp hết hạn mức
+                </p>
+              </div>
+              <div
+                class="relative w-10 h-6 bg-primary rounded-full transition-colors"
+              >
+                <div
+                  class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform"
+                ></div>
+              </div>
+            </label>
+            <label
+              class="flex items-center justify-between cursor-pointer group"
+            >
+              <div>
+                <p
+                  class="font-body-lg text-body-lg font-medium group-hover:text-primary transition-colors"
+                >
+                  Báo cáo cuối tuần
+                </p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Tổng kết chi tiêu vào Chủ nhật
+                </p>
+              </div>
+              <div
+                class="relative w-10 h-6 bg-primary rounded-full transition-colors"
+              >
+                <div
+                  class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-transform"
+                ></div>
+              </div>
+            </label>
+            <label
+              class="flex items-center justify-between cursor-pointer group"
+            >
+              <div>
+                <p
+                  class="font-body-lg text-body-lg font-medium group-hover:text-primary transition-colors"
+                >
+                  Cảnh báo chi tiêu bất thường
+                </p>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Phát hiện khoản chi lớn bất ngờ
+                </p>
+              </div>
+              <div
+                class="relative w-10 h-6 bg-surface-variant rounded-full transition-colors"
+              >
+                <div
+                  class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm transition-transform"
+                ></div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- Goals List -->
+      <div>
+        <div class="flex justify-between items-center mb-md">
+          <h3 class="font-title-md text-title-md">Quỹ gia đình</h3>
+          <button
+            class="flex items-center gap-1 text-primary font-label-md text-label-md hover:bg-primary-container/20 px-3 py-2 rounded-full transition-colors"
+          >
+            <span class="material-symbols-outlined text-[20px]">add</span> THÊM
+            QUỸ
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+          <!-- Goal 1 -->
+          <div
+            class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex items-start gap-md group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-tertiary-container/20 text-tertiary flex items-center justify-center shrink-0"
+            >
+              <span class="material-symbols-outlined text-2xl filled"
+                >savings</span
+              >
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-start mb-2">
+                <div>
+                  <h4
+                    class="font-body-lg text-body-lg font-medium group-hover:text-primary transition-colors"
+                  >
+                    Quỹ tiết kiệm
+                  </h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Mục tiêu: 100.000.000đ
+                  </p>
+                </div>
+                <span
+                  class="font-label-md text-label-md text-tertiary bg-tertiary-container/20 px-2 py-1 rounded-md"
+                  >45%</span
+                >
+              </div>
+              <div
+                class="h-2 bg-tertiary/10 rounded-full w-full overflow-hidden mb-1"
+              >
+                <div
+                  class="h-full bg-tertiary rounded-full"
+                  style="width: 45%"
+                ></div>
+              </div>
+              <p
+                class="font-body-sm text-body-sm text-on-surface-variant text-right"
+              >
+                Đã gom: 45.000.000đ
+              </p>
+            </div>
+          </div>
+          <!-- Goal 2 -->
+          <div
+            class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex items-start gap-md group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-secondary-container/20 text-secondary flex items-center justify-center shrink-0"
+            >
+              <span class="material-symbols-outlined text-2xl filled"
+                >flight_takeoff</span
+              >
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-start mb-2">
+                <div>
+                  <h4
+                    class="font-body-lg text-body-lg font-medium group-hover:text-primary transition-colors"
+                  >
+                    Quỹ du lịch
+                  </h4>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Mục tiêu: 30.000.000đ
+                  </p>
+                </div>
+                <span
+                  class="font-label-md text-label-md text-secondary bg-secondary-container/20 px-2 py-1 rounded-md"
+                  >15%</span
+                >
+              </div>
+              <div
+                class="h-2 bg-secondary/10 rounded-full w-full overflow-hidden mb-1"
+              >
+                <div
+                  class="h-full bg-secondary rounded-full"
+                  style="width: 15%"
+                ></div>
+              </div>
+              <p
+                class="font-body-sm text-body-sm text-on-surface-variant text-right"
+              >
+                Đã gom: 4.500.000đ
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+      class="md:hidden bg-surface-container dark:bg-surface-dim docked full-width bottom-0 rounded-t-xl shadow-[0_-4px_20px_rgba(0,0,0,0.04)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter pb-6 pt-2"
+    >
+      <a
+        class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-container-high rounded-full w-16"
+        href="#"
+      >
+        <span class="material-symbols-outlined mb-1" data-icon="home"
+          >home</span
+        >
+        <span class="font-label-md text-label-md">Home</span>
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-container-high rounded-full w-16"
+        href="#"
+      >
+        <span class="material-symbols-outlined mb-1" data-icon="history"
+          >history</span
+        >
+        <span class="font-label-md text-label-md">History</span>
+      </a>
+      <a
+        class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-full px-lg py-xs hover:bg-surface-variant/50 dark:hover:bg-surface-container-high scale-90 transition-transform duration-150"
+        href="#"
+      >
+        <span
+          class="material-symbols-outlined mb-1 filled"
+          data-icon="add_circle"
+          >add_circle</span
+        >
+        <span class="font-label-md text-label-md">Add</span>
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-container-high rounded-full w-16"
+        href="#"
+      >
+        <span class="material-symbols-outlined mb-1" data-icon="group"
+          >group</span
+        >
+        <span class="font-label-md text-label-md">Fund</span>
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-container-high rounded-full w-16"
+        href="#"
+      >
+        <span class="material-symbols-outlined mb-1" data-icon="person"
+          >person</span
+        >
+        <span class="font-label-md text-label-md">Profile</span>
+      </a>
+    </nav>
+  </body>
+</html>

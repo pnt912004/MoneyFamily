@@ -1,0 +1,324 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MoneyFamily - Sign Up</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#574500",
+              "secondary-fixed-dim": "#ebc23e",
+              "on-tertiary-container": "#003b11",
+              "surface-container-highest": "#e1e3e4",
+              "on-tertiary-fixed": "#002107",
+              "secondary-fixed": "#ffe087",
+              "on-primary": "#ffffff",
+              "surface-bright": "#f8f9fa",
+              tertiary: "#286b33",
+              "surface-dim": "#d9dadb",
+              "on-secondary-fixed": "#241a00",
+              "on-surface": "#191c1d",
+              "on-primary-fixed-variant": "#005313",
+              surface: "#f8f9fa",
+              "on-primary-container": "#003b0b",
+              outline: "#6f7a6b",
+              "inverse-surface": "#2e3132",
+              "tertiary-fixed": "#abf4ac",
+              "primary-fixed": "#94f990",
+              "on-secondary": "#ffffff",
+              primary: "#006e1c",
+              "secondary-container": "#fdd34d",
+              "tertiary-fixed-dim": "#90d792",
+              "on-error": "#ffffff",
+              "surface-variant": "#e1e3e4",
+              "surface-container-low": "#f3f4f5",
+              "surface-container": "#edeeef",
+              "on-error-container": "#93000a",
+              "on-surface-variant": "#3f4a3c",
+              "on-secondary-container": "#725b00",
+              "surface-tint": "#006e1c",
+              background: "#f8f9fa",
+              "outline-variant": "#becab9",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container-lowest": "#ffffff",
+              error: "#ba1a1a",
+              "on-primary-fixed": "#002204",
+              "on-tertiary-fixed-variant": "#07521d",
+              "on-background": "#191c1d",
+              "error-container": "#ffdad6",
+              "on-tertiary": "#ffffff",
+              "inverse-primary": "#78dc77",
+              "tertiary-container": "#65a969",
+              "surface-container-high": "#e7e8e9",
+              "primary-container": "#4bae4f",
+              "primary-fixed-dim": "#78dc77",
+              secondary: "#735c00",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              xl: "32px",
+              "margin-desktop": "40px",
+              "margin-mobile": "20px",
+              base: "4px",
+              md: "16px",
+              lg: "24px",
+              xs: "8px",
+              gutter: "16px",
+              sm: "12px",
+            },
+            fontFamily: {
+              "body-lg": ["Be Vietnam Pro"],
+              "headline-lg-mobile": ["Be Vietnam Pro"],
+              "body-sm": ["Be Vietnam Pro"],
+              "label-md": ["Be Vietnam Pro"],
+              "headline-lg": ["Be Vietnam Pro"],
+              "display-lg": ["Be Vietnam Pro"],
+              "title-md": ["Be Vietnam Pro"],
+            },
+            fontSize: {
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-lg": [
+                "40px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "title-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-on-background min-h-screen flex flex-col font-body-lg"
+  >
+    <main class="flex-grow flex flex-col md:flex-row min-h-screen">
+      <!-- Image Canvas (Desktop Only) -->
+      <section
+        class="hidden md:block md:w-1/2 relative bg-surface-variant overflow-hidden"
+      >
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          data-alt="A warm, inviting scene of a family sitting around a sunlit wooden kitchen table, looking at a tablet together and smiling. The lighting is soft and natural, emphasizing a modern, clean, and optimistic light-mode aesthetic with subtle green accents in the decor to match the brand identity. The atmosphere conveys trust, togetherness, and financial peace of mind."
+          style="
+            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuD9jQ3_4cnU8tBOViQE_SWlraOtzsrHK5zvJJ4_SXqdm1wO29spJjQQa5KMAjCZ0vd4O3AW7KMJh0HNrSoCybS5A-3gou9e0uf2CiNOc110UQVjnW7crompAUGrVpO_HswLL29O5Z_j8jVMAZYYH9USgIQ0aRcQ0GB_hfhG2to02gQohbUyKcUW3pS1gQeBW7ZSFkVHEoezl_xiw7eVQvygi9Ouel6O_vbMGDWKC2b9mqpRuCJL7Vfx&quot;);
+          "
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"
+        ></div>
+        <div class="absolute bottom-xl left-margin-desktop text-white">
+          <h2 class="font-headline-lg text-headline-lg mb-sm">
+            Xây dựng tương lai<br />cùng gia đình
+          </h2>
+          <p class="font-body-lg text-body-lg text-white/90">
+            Quản lý chi tiêu minh bạch, dễ dàng và gắn kết yêu thương.
+          </p>
+        </div>
+      </section>
+      <!-- Sign Up Form Canvas -->
+      <section
+        class="w-full md:w-1/2 flex flex-col justify-center px-margin-mobile md:px-margin-desktop py-xl bg-surface"
+      >
+        <div class="w-full max-w-md mx-auto">
+          <!-- Header -->
+          <div class="mb-lg text-center md:text-left">
+            <h1
+              class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs"
+            >
+              Tạo tài khoản mới
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">
+              Bắt đầu quản lý chi tiêu gia đình ngay hôm nay.
+            </p>
+          </div>
+          <!-- Form -->
+          <form class="flex flex-col gap-md">
+            <!-- Full Name -->
+            <div class="flex flex-col gap-base">
+              <label
+                class="font-label-md text-label-md text-on-surface-variant"
+                for="fullname"
+                >Họ và tên</label
+              >
+              <input
+                class="w-full bg-surface-container-low border-none rounded-lg px-md py-sm font-body-lg text-body-lg text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface transition-colors placeholder:text-outline-variant"
+                id="fullname"
+                placeholder="Nhập họ và tên của bạn"
+                type="text"
+              />
+            </div>
+            <!-- Email/Phone -->
+            <div class="flex flex-col gap-base">
+              <label
+                class="font-label-md text-label-md text-on-surface-variant"
+                for="contact"
+                >Email hoặc Số điện thoại</label
+              >
+              <input
+                class="w-full bg-surface-container-low border-none rounded-lg px-md py-sm font-body-lg text-body-lg text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface transition-colors placeholder:text-outline-variant"
+                id="contact"
+                placeholder="Nhập email hoặc số điện thoại"
+                type="text"
+              />
+            </div>
+            <!-- Password -->
+            <div class="flex flex-col gap-base">
+              <label
+                class="font-label-md text-label-md text-on-surface-variant"
+                for="password"
+                >Mật khẩu</label
+              >
+              <div class="relative">
+                <input
+                  class="w-full bg-surface-container-low border-none rounded-lg px-md py-sm font-body-lg text-body-lg text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface transition-colors placeholder:text-outline-variant pr-xl"
+                  id="password"
+                  placeholder="Tạo mật khẩu"
+                  type="password"
+                />
+                <button
+                  aria-label="Toggle password visibility"
+                  class="absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-xs"
+                  type="button"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    data-icon="visibility"
+                    >visibility</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Confirm Password -->
+            <div class="flex flex-col gap-base">
+              <label
+                class="font-label-md text-label-md text-on-surface-variant"
+                for="confirm_password"
+                >Xác nhận mật khẩu</label
+              >
+              <div class="relative">
+                <input
+                  class="w-full bg-surface-container-low border-none rounded-lg px-md py-sm font-body-lg text-body-lg text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface transition-colors placeholder:text-outline-variant pr-xl"
+                  id="confirm_password"
+                  placeholder="Nhập lại mật khẩu"
+                  type="password"
+                />
+                <button
+                  aria-label="Toggle password visibility"
+                  class="absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center p-xs"
+                  type="button"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    data-icon="visibility"
+                    >visibility</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Submit Button -->
+            <button
+              class="w-full mt-sm bg-primary text-on-primary font-title-md text-title-md py-sm rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:bg-primary/90 transition-all active:scale-95 flex items-center justify-center gap-xs"
+              type="submit"
+            >
+              Đăng ký
+              <span class="material-symbols-outlined" data-icon="arrow_forward"
+                >arrow_forward</span
+              >
+            </button>
+          </form>
+          <!-- Divider -->
+          <div class="flex items-center gap-md my-lg">
+            <div class="h-px bg-outline-variant flex-grow"></div>
+            <span
+              class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider"
+              >Hoặc đăng ký bằng</span
+            >
+            <div class="h-px bg-outline-variant flex-grow"></div>
+          </div>
+          <!-- Social Sign Up -->
+          <div class="flex flex-col sm:flex-row gap-sm">
+            <button
+              class="flex-1 flex items-center justify-center gap-xs bg-surface-container border border-outline-variant rounded-lg py-sm px-md hover:bg-surface-container-high transition-colors text-on-surface font-title-md text-title-md"
+            >
+              <img
+                alt="Google Logo"
+                class="w-5 h-5"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz_jzEuZFdmqxQczswwsVl6QYtFkCs3ZrPi3cdoW3LjbiudRsxozbYTFT1gxlh9y3v7Fybpkztj5nsZQxagKpzrPaohDujuvuT2aklZFOzyh4zFfHKtIYzPtnYXS3AmhJiIPqyxw2uIQSZP-RWyp_eALeKieYrqwke6PWJbaxFH8q2ByU4pqne9y7y1Lp_zW8Xj2nTcbIGrZJ1hpFM3_fia4nSZ7ZsN2Kr_HdG7veXsaMlOBrDqus_"
+              />
+              Google
+            </button>
+            <button
+              class="flex-1 flex items-center justify-center gap-xs bg-[#1877F2] rounded-lg py-sm px-md hover:bg-[#166FE5] transition-colors text-white font-title-md text-title-md"
+            >
+              <img
+                alt="Facebook Logo"
+                class="w-5 h-5 brightness-0 invert"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZjvr_HPtOqgIfN_2yuTzJk5eHzGmvU4muPATksKYS8w4-l1fi63XypVKjUMiGRY2F5s_6RvXFcZC_Ael5bnpB4HBtcrB_en5ipK4F_26KNQATOhzbzL5tTuqAj0MiqF1XTxcHEDvJudX7zyfOGzXv_38BCGRmm9JM69_UjFDA2oLYxJnqXY3i7xUtKxTIW29SYAj2Eh3JhYUOi98Z6ZKM7NUR9FS3KbOjPFOx03VE-SybzrqI4vwz"
+              />
+              Facebook
+            </button>
+          </div>
+          <!-- Footer Link -->
+          <p
+            class="mt-xl text-center font-body-lg text-body-lg text-on-surface-variant"
+          >
+            Đã có tài khoản?
+            <a
+              class="text-primary font-title-md text-title-md hover:underline decoration-2 underline-offset-4"
+              href="#"
+              >Đăng nhập ngay</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

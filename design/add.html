@@ -1,0 +1,409 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MoneyFamily - Quick Entry &amp; OCR</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              surface: "#f8f9fa",
+              "on-background": "#191c1d",
+              "on-primary-container": "#003b0b",
+              "tertiary-fixed": "#abf4ac",
+              error: "#ba1a1a",
+              "surface-container-highest": "#e1e3e4",
+              "primary-container": "#4bae4f",
+              "surface-container": "#edeeef",
+              "primary-fixed-dim": "#78dc77",
+              primary: "#006e1c",
+              "on-secondary-container": "#725b00",
+              "tertiary-container": "#65a969",
+              "surface-container-high": "#e7e8e9",
+              "secondary-fixed-dim": "#ebc23e",
+              "on-tertiary-container": "#003b11",
+              "on-secondary-fixed-variant": "#574500",
+              "inverse-on-surface": "#f0f1f2",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#78dc77",
+              "surface-tint": "#006e1c",
+              tertiary: "#286b33",
+              background: "#f8f9fa",
+              "on-primary-fixed-variant": "#005313",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#241a00",
+              "surface-dim": "#d9dadb",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f3f4f5",
+              "secondary-fixed": "#ffe087",
+              "on-surface-variant": "#3f4a3c",
+              "tertiary-fixed-dim": "#90d792",
+              "inverse-surface": "#2e3132",
+              "error-container": "#ffdad6",
+              outline: "#6f7a6b",
+              "surface-variant": "#e1e3e4",
+              "on-primary-fixed": "#002204",
+              "surface-bright": "#f8f9fa",
+              "primary-fixed": "#94f990",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#07521d",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fdd34d",
+              "on-surface": "#191c1d",
+              "outline-variant": "#becab9",
+              "on-tertiary-fixed": "#002107",
+              secondary: "#735c00",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              lg: "24px",
+              xs: "8px",
+              gutter: "16px",
+              "margin-desktop": "40px",
+              base: "4px",
+              md: "16px",
+              xl: "32px",
+              "margin-mobile": "20px",
+              sm: "12px",
+            },
+            fontFamily: {
+              "body-lg": ["Be Vietnam Pro"],
+              "body-sm": ["Be Vietnam Pro"],
+              "title-md": ["Be Vietnam Pro"],
+              "headline-lg-mobile": ["Be Vietnam Pro"],
+              "headline-lg": ["Be Vietnam Pro"],
+              "display-lg": ["Be Vietnam Pro"],
+              "label-md": ["Be Vietnam Pro"],
+            },
+            fontSize: {
+              "body-lg": [
+                "16px",
+                {
+                  lineHeight: "24px",
+                  fontWeight: "400",
+                },
+              ],
+              "body-sm": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  fontWeight: "400",
+                },
+              ],
+              "title-md": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-lg": [
+                "40px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .numpad-btn {
+        transition: all 0.1s ease;
+      }
+      .numpad-btn:active {
+        transform: scale(0.95);
+        background-color: theme("colors.surface-container-high");
+      }
+      .shadow-soft {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      }
+      .shadow-elevated {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background min-h-screen flex flex-col font-body-lg"
+  >
+    <!-- TopAppBar -->
+    <header
+      class="bg-surface text-primary flex justify-between items-center px-margin-mobile md:px-margin-desktop py-sm w-full sticky top-0 z-50"
+    >
+      <div class="flex items-center gap-sm">
+        <img
+          class="w-10 h-10 rounded-full object-cover"
+          data-alt="A small, circular, high-resolution portrait of a modern family member, softly lit and smiling warmly against a clean, light-mode background. It serves as an avatar in a financial app interface."
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdghXKlVr80xaUlKGdV6VJZZG4CyfEMKAHWRwic4lV1-ZQS9xbJ8pfNp4ekPfQ0XZ3V24NQCZGtS0G2bidZaNyc_JciSE57ai4ffrkojFrhfGxb1QqI1sKOE5E112wSC2neNeBOF8XwP3jH8XcZFcq4GL_V_j9Rq82n6HMviQES_KdKDVpw0lXkqqji9KkTwi8ICI6pzPxiauPjoLY5gutyqy7Mnkfmyk6o9gNrfUzyBSZlYPKLjaT"
+        />
+      </div>
+      <div
+        class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary"
+      >
+        MoneyFamily
+      </div>
+      <div>
+        <span
+          class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity"
+          >notifications</span
+        >
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main
+      class="flex-grow flex flex-col items-center w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg pb-32"
+    >
+      <!-- Input Display Area -->
+      <div
+        class="w-full max-w-md bg-surface-container-lowest rounded-xl shadow-soft p-lg mb-lg flex flex-col items-center justify-center min-h-[120px]"
+      >
+        <div
+          class="text-on-surface-variant font-label-md text-label-md mb-base uppercase tracking-widest"
+        >
+          Số tiền
+        </div>
+        <div
+          class="font-display-lg text-display-lg text-primary flex items-center gap-xs"
+        >
+          <span>0</span><span class="text-title-md">đ</span>
+        </div>
+        <div class="text-outline font-body-sm text-body-sm mt-xs opacity-70">
+          Nhập số tiền để tiếp tục
+        </div>
+      </div>
+      <!-- OCR Scan CTA -->
+      <div class="w-full max-w-md mb-xl flex justify-center">
+        <button
+          class="bg-primary text-on-primary rounded-full px-lg py-sm flex items-center gap-sm shadow-elevated hover:opacity-90 active:scale-95 transition-all"
+        >
+          <span class="material-symbols-outlined">photo_camera</span>
+          <span class="font-title-md text-title-md">Chụp hóa đơn</span>
+        </button>
+      </div>
+      <!-- Simulated OCR Preview (Hidden by default, shown for demonstration) -->
+      <div
+        class="w-full max-w-md bg-secondary-container/20 border border-secondary-container rounded-lg p-sm mb-lg flex items-center justify-between"
+      >
+        <div class="flex items-center gap-sm text-secondary">
+          <span class="material-symbols-outlined animate-pulse"
+            >document_scanner</span
+          >
+          <span class="font-body-sm text-body-sm"
+            >Đang quét... Tổng tiền: 150.000đ</span
+          >
+        </div>
+        <button class="text-secondary opacity-70 hover:opacity-100">
+          <span class="material-symbols-outlined text-sm">close</span>
+        </button>
+      </div>
+      <!-- Category Selection Chips -->
+      <div class="w-full max-w-md mb-xl overflow-x-auto pb-sm hide-scrollbar">
+        <div class="flex gap-sm">
+          <button
+            class="flex-shrink-0 bg-primary-container text-on-primary-container rounded-full px-md py-xs font-label-md text-label-md flex items-center gap-xs border-2 border-primary"
+          >
+            <span class="material-symbols-outlined text-[16px]"
+              >restaurant</span
+            >
+            Food
+          </button>
+          <button
+            class="flex-shrink-0 bg-surface-container text-on-surface rounded-full px-md py-xs font-label-md text-label-md flex items-center gap-xs hover:bg-surface-variant"
+          >
+            <span class="material-symbols-outlined text-[16px]">home</span>
+            House
+          </button>
+          <button
+            class="flex-shrink-0 bg-surface-container text-on-surface rounded-full px-md py-xs font-label-md text-label-md flex items-center gap-xs hover:bg-surface-variant"
+          >
+            <span class="material-symbols-outlined text-[16px]"
+              >child_care</span
+            >
+            Kids
+          </button>
+          <button
+            class="flex-shrink-0 bg-surface-container text-on-surface rounded-full px-md py-xs font-label-md text-label-md flex items-center gap-xs hover:bg-surface-variant"
+          >
+            <span class="material-symbols-outlined text-[16px]"
+              >directions_car</span
+            >
+            Transport
+          </button>
+        </div>
+      </div>
+      <!-- Numeric Keypad -->
+      <div class="w-full max-w-md grid grid-cols-3 gap-sm mb-xl">
+        <!-- Row 1 -->
+        <button
+          class="numpad-btn bg-surface-container rounded-lg aspect-square flex items-center justify-center font-headline-lg text-headline-lg text-on-surface"
+        >
+          1
+        </button>
+        <button
+          class="numpad-btn bg-surface-container rounded-lg aspect-square flex items-center justify-center font-headline-lg text-headline-lg text-on-surface"
+        >
+          2
+        </button>
+        <button
+          class="numpad-btn bg-surface-container rounded-lg aspect-square flex items-center justify-center font-headline-lg text-headline-lg text-on-surface"
+        >
+          3
+        </button>
+        <!-- Row 2 -->
+        <button
+          class="numpad-btn bg-surface-container rounded-lg aspect-square flex items-center justify-center font-headline-lg text-headline-lg text-on-surface"
+        >
+          4
+        </button>
+        <button
+          class="numpad-btn bg-surface-container rounded-lg aspect-square flex items-center justify-center font-headline-lg text-headline-lg text-on-surface"
+        >
+          5
+        </button>
+        <button
+          class="numpad-btn bg-surface-container rounded-lg aspect-square flex items-center justify-center font-headline-lg text-headline-lg text-on-surface"
+        >
+          6
+        </button>
+        <!-- Row 3 -->
+        <button
+          class="numpad-btn bg-surface-container rounded-lg aspect-square flex items-center justify-center font-headline-lg text-headline-lg text-on-surface"
+        >
+          7
+        </button>
+        <button
+          class="numpad-btn bg-surface-container rounded-lg aspect-square flex items-center justify-center font-headline-lg text-headline-lg text-on-surface"
+        >
+          8
+        </button>
+        <button
+          class="numpad-btn bg-surface-container rounded-lg aspect-square flex items-center justify-center font-headline-lg text-headline-lg text-on-surface"
+        >
+          9
+        </button>
+        <!-- Row 4 -->
+        <button
+          class="numpad-btn bg-surface-container/50 rounded-lg aspect-square flex items-center justify-center font-title-md text-title-md text-on-surface-variant"
+        >
+          000
+        </button>
+        <button
+          class="numpad-btn bg-surface-container rounded-lg aspect-square flex items-center justify-center font-headline-lg text-headline-lg text-on-surface"
+        >
+          0
+        </button>
+        <button
+          class="numpad-btn bg-surface-container/50 rounded-lg aspect-square flex items-center justify-center text-on-surface-variant"
+        >
+          <span class="material-symbols-outlined">backspace</span>
+        </button>
+      </div>
+      <!-- Submit Button -->
+      <button
+        class="w-full max-w-md bg-primary text-on-primary rounded-full py-md font-title-md text-title-md shadow-elevated active:scale-95 transition-transform opacity-50 cursor-not-allowed"
+      >
+        Lưu
+      </button>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+      class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter pb-6 pt-2 bg-surface-container shadow-[0_-4px_20px_rgba(0,0,0,0.04)] rounded-t-xl md:hidden"
+    >
+      <!-- Inactive: Home -->
+      <div
+        class="flex flex-col items-center justify-center text-on-surface-variant p-2 cursor-pointer hover:bg-surface-variant/50 rounded-full"
+      >
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-label-md text-label-md mt-1">Home</span>
+      </div>
+      <!-- Inactive: History -->
+      <div
+        class="flex flex-col items-center justify-center text-on-surface-variant p-2 cursor-pointer hover:bg-surface-variant/50 rounded-full"
+      >
+        <span class="material-symbols-outlined">history</span>
+        <span class="font-label-md text-label-md mt-1">History</span>
+      </div>
+      <!-- Active: Add (Quick Entry) -->
+      <div
+        class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-lg py-xs cursor-pointer scale-90 transition-transform duration-150 shadow-soft"
+      >
+        <span
+          class="material-symbols-outlined"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >add_circle</span
+        >
+        <span class="font-label-md text-label-md mt-1">Add</span>
+      </div>
+      <!-- Inactive: Fund -->
+      <div
+        class="flex flex-col items-center justify-center text-on-surface-variant p-2 cursor-pointer hover:bg-surface-variant/50 rounded-full"
+      >
+        <span class="material-symbols-outlined">group</span>
+        <span class="font-label-md text-label-md mt-1">Fund</span>
+      </div>
+      <!-- Inactive: Profile -->
+      <div
+        class="flex flex-col items-center justify-center text-on-surface-variant p-2 cursor-pointer hover:bg-surface-variant/50 rounded-full"
+      >
+        <span class="material-symbols-outlined">person</span>
+        <span class="font-label-md text-label-md mt-1">Profile</span>
+      </div>
+    </nav>
+  </body>
+</html>

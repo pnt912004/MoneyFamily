@@ -1,0 +1,325 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Family Fund &amp; Invites</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              surface: "#f8f9fa",
+              "on-background": "#191c1d",
+              "on-primary-container": "#003b0b",
+              "tertiary-fixed": "#abf4ac",
+              error: "#ba1a1a",
+              "surface-container-highest": "#e1e3e4",
+              "primary-container": "#4bae4f",
+              "surface-container": "#edeeef",
+              "primary-fixed-dim": "#78dc77",
+              primary: "#006e1c",
+              "on-secondary-container": "#725b00",
+              "tertiary-container": "#65a969",
+              "surface-container-high": "#e7e8e9",
+              "secondary-fixed-dim": "#ebc23e",
+              "on-tertiary-container": "#003b11",
+              "on-secondary-fixed-variant": "#574500",
+              "inverse-on-surface": "#f0f1f2",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#78dc77",
+              "surface-tint": "#006e1c",
+              tertiary: "#286b33",
+              background: "#f8f9fa",
+              "on-primary-fixed-variant": "#005313",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#241a00",
+              "surface-dim": "#d9dadb",
+              "on-tertiary": "#ffffff",
+              "surface-container-low": "#f3f4f5",
+              "secondary-fixed": "#ffe087",
+              "on-surface-variant": "#3f4a3c",
+              "tertiary-fixed-dim": "#90d792",
+              "inverse-surface": "#2e3132",
+              "error-container": "#ffdad6",
+              outline: "#6f7a6b",
+              "surface-variant": "#e1e3e4",
+              "on-primary-fixed": "#002204",
+              "surface-bright": "#f8f9fa",
+              "primary-fixed": "#94f990",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed-variant": "#07521d",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fdd34d",
+              "on-surface": "#191c1d",
+              "outline-variant": "#becab9",
+              "on-tertiary-fixed": "#002107",
+              secondary: "#735c00",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              lg: "24px",
+              xs: "8px",
+              gutter: "16px",
+              "margin-desktop": "40px",
+              base: "4px",
+              md: "16px",
+              xl: "32px",
+              "margin-mobile": "20px",
+              sm: "12px",
+            },
+            fontFamily: {
+              "body-lg": ["Be Vietnam Pro", "sans-serif"],
+              "body-sm": ["Be Vietnam Pro", "sans-serif"],
+              "title-md": ["Be Vietnam Pro", "sans-serif"],
+              "headline-lg-mobile": ["Be Vietnam Pro", "sans-serif"],
+              "headline-lg": ["Be Vietnam Pro", "sans-serif"],
+              "display-lg": ["Be Vietnam Pro", "sans-serif"],
+              "label-md": ["Be Vietnam Pro", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-background min-h-screen pb-24">
+    <!-- TopAppBar -->
+    <header
+      class="bg-surface text-primary flex justify-between items-center px-margin-mobile py-sm w-full sticky top-0 z-50"
+    >
+      <div
+        class="w-10 h-10 rounded-full overflow-hidden bg-surface-variant flex items-center justify-center"
+      >
+        <span
+          class="material-symbols-outlined text-on-surface-variant"
+          data-icon="person"
+          >person</span
+        >
+      </div>
+      <h1
+        class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary"
+      >
+        MoneyFamily
+      </h1>
+      <button
+        class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:opacity-80 transition-opacity"
+      >
+        <span class="material-symbols-outlined" data-icon="notifications"
+          >notifications</span
+        >
+      </button>
+    </header>
+    <main class="max-w-md mx-auto px-margin-mobile mt-md flex flex-col gap-lg">
+      <!-- Header Section -->
+      <div>
+        <h2 class="font-title-md text-title-md text-on-background mb-xs">
+          Quỹ Gia Đình
+        </h2>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">
+          Quản lý thành viên và mời người thân tham gia quỹ.
+        </p>
+      </div>
+      <!-- Invite Card (Bento style) -->
+      <div
+        class="bg-white rounded-xl p-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col items-center text-center"
+      >
+        <div class="font-title-md text-title-md mb-md">Mã mời gia đình</div>
+        <div
+          class="w-48 h-48 bg-surface-container-high rounded-lg mb-md flex items-center justify-center relative overflow-hidden"
+        >
+          <img
+            class="w-full h-full object-cover"
+            data-alt="A clean, modern QR code graphic designed for scanning, integrated smoothly into a light minimalist interface. The QR pattern should be sharp and clear, in a soft dark gray against a pure white background, avoiding harsh blacks. A subtle green accent or friendly abstract shape sits comfortably in the center. The aesthetic is modern, approachable, and digital-first, illuminated by soft ambient lighting."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbSec7A8GkH1l_-7blAK2tkTAGGTdr68dMo8aepF-3VZdC2Vg9jlHCdDHL76xX3r8fu2DIxtJ-h_m2hVwVaaVtFHntMjx5iQUGEIQqxibjzpW59kytNJCDzzLYHVPagVdQ3w7oDtc264K43oy_KiAfRkaFrSQQn29Yis3CB5yTEZTOwPA9qw-fGKwcdC_bVtNtyrWm9rPqzUsoJY2xG9ma5hq8sSb_b25EHUN-0ViLSCXnBPgw_r0s"
+          />
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">
+          Quét mã QR này hoặc chia sẻ liên kết để mời thành viên mới.
+        </p>
+        <button
+          class="w-full bg-primary text-on-primary py-sm px-lg rounded-full font-label-md text-label-md flex items-center justify-center gap-xs shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:scale-95 transition-transform duration-100"
+        >
+          <span class="material-symbols-outlined" data-icon="content_copy"
+            >content_copy</span
+          >
+          Sao chép link mời
+        </button>
+      </div>
+      <!-- Member List Section -->
+      <div>
+        <h3 class="font-title-md text-title-md text-on-background mb-md">
+          Thành viên (4)
+        </h3>
+        <div class="flex flex-col gap-sm">
+          <!-- Member 1: Trưởng quỹ -->
+          <div
+            class="bg-white rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex items-center justify-between"
+          >
+            <div class="flex items-center gap-sm">
+              <div
+                class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high"
+              >
+                <img
+                  class="w-full h-full object-cover"
+                  data-alt="A bright, cheerful portrait photo of a young modern Asian man smiling warmly. He is wearing a simple casual white t-shirt. The background is a soft, out-of-focus cozy living room with natural daylight pouring in. The lighting is flattering and cinematic, emphasizing an approachable, friendly, and trustworthy vibe typical of a modern lifestyle app avatar."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdARvEEePJPI71SgCh3MhgnxCf1S89v45p_3G8131zKvTVfpxQDqNdEQpCzCIP9ENmIjLrMr5n6mymoKF57IHB7jZaBQ99DjYKmYnqy_dc_7EOTctXpyIUfKdidqw5fdyj07Lx4renMK9P41mgXAOIcc1m-fOeIRA1n4wNuEzyDOpoFoLSWyefZPYatnMbbXFnYamOy1StvoeuCyfmq91G0Qkwi4nIxO7zGO5MnkObdthVF9LL_Eoa"
+                />
+              </div>
+              <div>
+                <div class="font-title-md text-title-md text-on-background">
+                  Minh Trí (Bạn)
+                </div>
+                <div
+                  class="font-label-md text-label-md text-primary bg-primary-container px-2 py-1 rounded inline-block mt-1"
+                >
+                  Trưởng quỹ
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Member 2: Thành viên -->
+          <div
+            class="bg-white rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex items-center justify-between"
+          >
+            <div class="flex items-center gap-sm">
+              <div
+                class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high"
+              >
+                <img
+                  class="w-full h-full object-cover"
+                  data-alt="A bright, cheerful portrait photo of a young modern Asian woman with shoulder-length hair smiling warmly. She is wearing a soft beige knit sweater. The background is a soft, out-of-focus cozy kitchen with warm morning light. The lighting is flattering and cinematic, emphasizing an approachable, friendly, and trustworthy vibe typical of a modern lifestyle app avatar."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb_nPhHg0N7f8ZvLCqPjaHtoUxf4-LH4RBJv1YtB8CwHj_JIplZ2Pu5OHjGcKq2C4x7yDLViY6mzFUMHo-h9ywHivP7ON_bqQ2xomVcjoVC_R9L4M-IgKgJ0t5jN6xrhjXVLkxgfuacKuxIS0W0ICrkLBx5-UwLGugseziiWSr5FSyjYM4IC2xNZE-YQx_c9tBKaTJkV9axUsAJMOvRZiGv6UtaZri3HyMRbJY-WL-g5tH8-9Eh9Ht"
+                />
+              </div>
+              <div>
+                <div class="font-title-md text-title-md text-on-background">
+                  Lan Anh
+                </div>
+                <div class="font-body-sm text-body-sm text-on-surface-variant">
+                  Thành viên
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col items-end gap-1">
+              <span class="font-label-md text-label-md text-on-surface-variant"
+                >Quyền chỉnh sửa</span
+              >
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  checked=""
+                  class="sr-only peer"
+                  type="checkbox"
+                  value=""
+                />
+                <div
+                  class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"
+                ></div>
+              </label>
+            </div>
+          </div>
+          <!-- Member 3: Thành viên -->
+          <div
+            class="bg-white rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex items-center justify-between"
+          >
+            <div class="flex items-center gap-sm">
+              <div
+                class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high flex items-center justify-center text-on-surface-variant font-title-md"
+              >
+                B
+              </div>
+              <div>
+                <div class="font-title-md text-title-md text-on-background">
+                  Bà Nội
+                </div>
+                <div class="font-body-sm text-body-sm text-on-surface-variant">
+                  Thành viên
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col items-end gap-1">
+              <span class="font-label-md text-label-md text-on-surface-variant"
+                >Quyền chỉnh sửa</span
+              >
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input class="sr-only peer" type="checkbox" value="" />
+                <div
+                  class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- BottomNavBar -->
+    <nav
+      class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter pb-6 pt-2 bg-surface-container shadow-[0_-4px_20px_rgba(0,0,0,0.04)] rounded-t-xl md:hidden"
+    >
+      <button
+        class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant/50 rounded-full"
+      >
+        <span class="material-symbols-outlined" data-icon="home">home</span>
+        <span class="font-label-md text-label-md mt-1">Home</span>
+      </button>
+      <button
+        class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant/50 rounded-full"
+      >
+        <span class="material-symbols-outlined" data-icon="history"
+          >history</span
+        >
+        <span class="font-label-md text-label-md mt-1">History</span>
+      </button>
+      <button
+        class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant/50 rounded-full"
+      >
+        <span class="material-symbols-outlined" data-icon="add_circle"
+          >add_circle</span
+        >
+        <span class="font-label-md text-label-md mt-1">Add</span>
+      </button>
+      <button
+        class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-lg py-xs hover:bg-surface-variant/50 active:scale-90 transition-transform duration-150"
+      >
+        <span
+          class="material-symbols-outlined"
+          data-icon="group"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >group</span
+        >
+        <span class="font-label-md text-label-md mt-1">Fund</span>
+      </button>
+      <button
+        class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-variant/50 rounded-full"
+      >
+        <span class="material-symbols-outlined" data-icon="person">person</span>
+        <span class="font-label-md text-label-md mt-1">Profile</span>
+      </button>
+    </nav>
+  </body>
+</html>
