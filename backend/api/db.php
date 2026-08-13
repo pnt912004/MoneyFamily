@@ -11,9 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 $host = 'localhost';
-$db_name = 'zczzbsqp_MoneyFamily';
-$username = 'zczzbsqp_MoneyFamily';
-$password = 'q4ce7QfHvjPsg2UDdWzb';
+$db_name = 'vcqkaqga_MoneyFamily';
+$username = 'vcqkaqga_MoneyFamily';
+$password = 'ue6cM7J8BXPEPTLzTMd5';
 
 try {
     $conn = new PDO("mysql:host={$host};dbname={$db_name};charset=utf8", $username, $password);
